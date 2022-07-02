@@ -1,0 +1,10 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    image: crwn-clothing_web:1
+    ports: 
+       -  3000:3000
+    volumes:
+      - .:/app
