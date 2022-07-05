@@ -1,4 +1,4 @@
-import { useState } from "react";
+import {useState } from "react";
 import {
   createUserDocumentFromAuth,
   signInAuthWithEmailAndPassword,
@@ -27,7 +27,6 @@ const SignIn = () => {
 
     try {
       const { user } = await signInAuthWithEmailAndPassword(email, password);
-      console.log(user);
       resetFormFields();
     } catch (e) {
       console.log(e);
@@ -42,9 +41,7 @@ const SignIn = () => {
   };
 
   const signInWithGoogle = async () => {
-    const { user } = await signInWithGooglePopup();
-    console.log(user);
-    await createUserDocumentFromAuth(user);
+    await signInWithGooglePopup();
   };
 
   return (
